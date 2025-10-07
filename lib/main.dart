@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-        scrolledUnderElevation: 0,
-    backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.white,
         ),
         scaffoldBackgroundColor: Color(0xffF9FAFB),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

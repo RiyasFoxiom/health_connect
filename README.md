@@ -6,6 +6,32 @@ A new Flutter project.
 
 A Flutter project scaffold focused on health-related features and common UI utilities.
 
+## Package Selection Note
+
+Originally, this project was planned to use `flutter_health_connect`, but due to namespace issues and compatibility concerns, we switched to the `health` package (^13.2.0). Here's why:
+
+### Why not flutter_health_connect?
+- Namespace conflicts with Android Health Connect
+- Limited platform support
+- Some implementation challenges with recent Android versions
+
+### Why health package?
+- Broader platform support
+- More stable API
+- Better compatibility with both Android and iOS
+- Extensive features including:
+  - Step counting
+  - Heart rate monitoring
+  - Activity tracking
+  - Proper permission handling
+  - Real-time health data updates
+
+### Migration Benefits
+- More reliable health data access
+- Better cross-platform consistency
+- Improved permission management
+- Regular package maintenance and updates
+
 ## Project folder structure
 
 The `lib/` folder in this project follows this layout (folders only — files shown as example locations):
@@ -61,6 +87,28 @@ lib/
 ```
 
 > Note: The tree above lists example file locations. If you want me to scaffold any of the missing Dart files, say which ones and I'll add basic templates.
+
+## Health Package Implementation
+
+### Required Permissions
+
+#### Android
+Add to `android/app/src/main/AndroidManifest.xml`:
+```xml
+<!-- Health Connect permissions -->
+<uses-permission android:name="android.permission.health.READ_STEPS"/>
+<uses-permission android:name="android.permission.health.READ_HEART_RATE"/>
+<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+```
+
+#### iOS
+Add to `ios/Runner/Info.plist`:
+```xml
+<key>NSHealthShareUsageDescription</key>
+<string>We need access to your health data to track your fitness progress</string>
+<key>NSHealthUpdateUsageDescription</key>
+<string>We need permission to save your workout data</string>
+```
 
 ## Dependencies (from `pubspec.yaml`)
 

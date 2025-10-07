@@ -107,9 +107,9 @@ class _HealthChartState extends State<HealthChart> {
           ),
           Expanded(
             child: GestureDetector(
-              onScaleStart: _handleScaleStart,
-              onScaleUpdate: _handleScaleUpdate,
-              onTapDown: _handleTapDown,
+              // onScaleStart: _handleScaleStart,
+              // onScaleUpdate: _handleScaleUpdate,
+              // onTapDown: _handleTapDown,
               onTapUp: (_) => setState(() => _tapPosition = null),
               onTapCancel: () => setState(() => _tapPosition = null),
               child: CustomPaint(
@@ -141,21 +141,21 @@ class _HealthChartState extends State<HealthChart> {
     );
   }
 
-  void _handleScaleStart(ScaleStartDetails details) {
-    _previousScale = _scale;
-    _previousOffset = _offset;
-  }
+  // void _handleScaleStart(ScaleStartDetails details) {
+  //   _previousScale = _scale;
+  //   _previousOffset = _offset;
+  // }
 
-  void _handleScaleUpdate(ScaleUpdateDetails details) {
-    setState(() {
-      _scale = (_previousScale * details.scale).clamp(0.5, 5.0);
-      _offset = _previousOffset + details.focalPointDelta;
-    });
-  }
+  // void _handleScaleUpdate(ScaleUpdateDetails details) {
+  //   setState(() {
+  //     _scale = (_previousScale * details.scale).clamp(0.5, 5.0);
+  //     _offset = _previousOffset + details.focalPointDelta;
+  //   });
+  // }
 
-  void _handleTapDown(TapDownDetails details) {
-    setState(() {
-      _tapPosition = details.localPosition;
-    });
-  }
+  // void _handleTapDown(TapDownDetails details) {
+  //   setState(() {
+  //     _tapPosition = details.localPosition;
+  //   });
+  // }
 }

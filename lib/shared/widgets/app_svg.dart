@@ -9,25 +9,27 @@ class AppSvg extends StatelessWidget {
   final void Function()? onPressed;
   final AlignmentGeometry alignment;
 
-  const AppSvg(
-      {super.key,
-      required this.assetName,
-      this.color,
-      this.width,
-      this.height,
-      this.fit = BoxFit.contain,
-      this.onPressed,
-      this.alignment = Alignment.center});
+  const AppSvg({
+    super.key,
+    required this.assetName,
+    this.color,
+    this.width,
+    this.height,
+    this.fit = BoxFit.contain,
+    this.onPressed,
+    this.alignment = Alignment.center,
+  });
 
-  const AppSvg.clickable(
-      {super.key,
-      required this.assetName,
-      this.color,
-      this.width,
-      this.height,
-      this.fit = BoxFit.contain,
-      required this.onPressed,
-      this.alignment = Alignment.center});
+  const AppSvg.clickable({
+    super.key,
+    required this.assetName,
+    this.color,
+    this.width,
+    this.height,
+    this.fit = BoxFit.contain,
+    required this.onPressed,
+    this.alignment = Alignment.center,
+  });
 
   @override
   Widget build(BuildContext context) => onPressed == null
@@ -39,12 +41,14 @@ class AppSvg extends StatelessWidget {
           icon: buildSvgPicture(),
         );
 
-  SvgPicture buildSvgPicture() =>
-      SvgPicture.asset("assets/images/$assetName.svg",
-          fit: fit,
-          width: width,
-          alignment: alignment,
-          height: height,
-          colorFilter:
-              color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null);
+  SvgPicture buildSvgPicture() => SvgPicture.asset(
+    "assets/images/$assetName.svg",
+    fit: fit,
+    width: width,
+    alignment: alignment,
+    height: height,
+    colorFilter: color != null
+        ? ColorFilter.mode(color!, BlendMode.srcIn)
+        : null,
+  );
 }
