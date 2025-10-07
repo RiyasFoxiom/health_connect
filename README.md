@@ -130,9 +130,35 @@ lib/
 
 ## Health Package Implementation
 
-### Required Permissions
+### Android Requirements
 
-#### Android
+#### SDK Versions
+```gradle
+minSdk = 26    // Minimum SDK version required
+targetSdk = 34 // Target SDK version
+```
+
+These SDK versions are required for:
+- Health Connect API compatibility
+- Modern Android features support
+- Optimal performance and security
+- Latest health data access features
+
+### Android Setup
+
+#### SDK Configuration
+In `android/app/build.gradle.kts`:
+```kotlin
+android {
+    defaultConfig {
+        minSdk = 26
+        targetSdk = 34
+    }
+}
+```
+
+
+#### Required Permissions
 Add to `android/app/src/main/AndroidManifest.xml`:
 ```xml
 <!-- Health Connect permissions -->
