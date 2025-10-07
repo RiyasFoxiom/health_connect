@@ -1,0 +1,68 @@
+name: health_connect
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  
+  cupertino_icons: ^1.0.8
+  get: ^4.7.2
+  lottie: ^3.3.2
+  flutter_svg: ^2.2.1
+  health: ^13.2.0
+  permission_handler: ^11.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+  
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/lottie/
+    - assets/images/
+    - assets/fonts/
+
+  
+  fonts:
+    - family: Inter_SemiBold
+      fonts:
+        - asset: assets/fonts/Inter_SemiBold.ttf
+          weight: 600
+    - family: Inter_Regular.ttf
+      fonts:
+        - asset: assets/fonts/Inter_Regular.ttf
+          weight: 400
+    - family: Inter_Bold
+      fonts:
+        - asset: assets/fonts/Inter_Bold.ttf
+          weight: 700
+    - family: Inter_ExtraBold
+      fonts:
+        - asset: assets/fonts/Inter_ExtraBold.ttf
+          weight: 800
+    - family: Poppins-ExtraBold
+      fonts:
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

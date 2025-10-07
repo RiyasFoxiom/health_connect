@@ -1,0 +1,89 @@
+# health_connect
+
+A new Flutter project.
+
+# health_connect
+
+A Flutter project scaffold focused on health-related features and common UI utilities.
+
+## Project folder structure
+
+The `lib/` folder in this project follows this layout (folders only — files shown as example locations):
+
+```
+lib/
+├── app/
+│   ├── controller/
+│   │   └── auth_controller.dart
+│   ├── view/
+│   │   ├── home/
+│   │   │   └── home_view.dart
+│   │   ├── cart/
+│   │   │   └── cart_view.dart
+│   ├── model/
+│   │   ├── response/
+│   │   │   └── product_response.dart
+│   │   └── product.dart
+│   ├── widget/
+│   │   ├── app_loader.dart
+│   │   └── app_chip.dart
+│   └── config.dart
+├── core/
+│   ├── extension/
+│   │   ├── margin_ext.dart
+│   │   └── string.ext.dart
+│   ├── service/
+│   │   ├── api.dart
+│   │   ├── api_response.dart
+│   │   ├── multipart_api.dart
+│   │   └── urls.dart
+│   ├── style/
+│   │   ├── colors.dart
+│   │   └── string.dart
+│   ├── theme.dart
+│   ├── sharedpreference.dart
+│   └── screen_utils.dart
+├── shared/
+│   ├── dialog/
+│   │   ├── app_snackbar.dart
+│   │   └── image_picker.dart
+│   ├── pushnotification/
+│   │   └── push_notification.dart
+│   ├── utils/
+│   │   ├── get_validators.dart
+│   │   ├── hex_color_code.dart
+│   │   └── date_formatted.dart
+│   └── widgets/
+│       ├── app_cached_image.dart
+│       ├── app_date_picker.dart
+│       └── app_lottie.dart
+└── main.dart
+```
+
+> Note: The tree above lists example file locations. If you want me to scaffold any of the missing Dart files, say which ones and I'll add basic templates.
+
+## Dependencies (from `pubspec.yaml`)
+
+The project currently declares these important dependencies:
+
+- get: ^4.7.2 — state management & routing
+- lottie: ^3.3.2 — Lottie animations
+- flutter_svg: ^2.2.1 — SVG rendering
+- health: ^13.2.0 — access health data on supported platforms
+
+If you changed versions locally, those are reflected here.
+
+## Assets & Fonts (from `pubspec.yaml`)
+
+Assets included in the project:
+
+- assets/lottie/
+- assets/images/
+- assets/fonts/
+
+Fonts configured:
+
+- Inter_SemiBold (assets/fonts/Inter_SemiBold.ttf) — weight 600
+- Inter_Regular (assets/fonts/Inter_Regular.ttf) — weight 400
+
+Add any additional assets to the `flutter:` -> `assets:` list in `pubspec.yaml`.
