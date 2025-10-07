@@ -6,6 +6,18 @@ A new Flutter project.
 
 A Flutter project scaffold focused on health-related features and common UI utilities.
 
+## State Management Implementation
+
+While the initial requirement suggested Provider/Riverpod for state management, this project implements GetX (^4.7.2) for several reasons:
+
+
+### Benefits of Current Implementation
+- Clean architecture separation (Controllers, Views, Models)
+- Reactive state updates without setState
+- Easy testing and mocking
+- Simplified route management
+- Efficient memory management
+
 ## Package Selection Note
 
 Originally, this project was planned to use `flutter_health_connect`, but due to namespace issues and compatibility concerns, we switched to the `health` package (^13.2.0). Here's why:
@@ -31,6 +43,34 @@ Originally, this project was planned to use `flutter_health_connect`, but due to
 - Better cross-platform consistency
 - Improved permission management
 - Regular package maintenance and updates
+
+## Project Architecture with GetX
+
+The project follows a clean architecture pattern using GetX, organized as follows:
+
+### Controllers
+- Located in `app/controller/`
+- Handle business logic and state management
+- Extend `GetxController`
+- Use `.obs` for reactive state
+
+### Views
+- Located in `app/view/`
+- Pure UI components
+- Use `Obx` for reactive updates
+- Minimal logic, mostly UI rendering
+
+### Models
+- Located in `app/model/`
+- Data structures and business objects
+- Response models for API handling
+- Clean data representations
+
+### Services
+- Located in `core/service/`
+- Handle external interactions
+- API calls, device features
+- Dependency injection via Get.put()
 
 ## Project folder structure
 
